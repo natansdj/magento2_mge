@@ -1,0 +1,31 @@
+#!/bin/bash
+
+source bin/magento.env
+
+bin/setup-composer-auth
+
+echo "Magento setup."
+bin/clinotty php -d memory_limit=-1 bin/magento setup:install \
+--admin-firstname="$MAGENTO_ADMIN_FIRST_NAME" \
+--admin-lastname="$MAGENTO_ADMIN_LAST_NAME" \
+--admin-email="$MAGENTO_ADMIN_EMAIL" \
+--admin-user="$MAGENTO_ADMIN_USER" \
+--admin-password="$MAGENTO_ADMIN_PASSWORD" \
+--base-url=https://"$DOMAIN"/ \
+--base-url-secure=https://"$DOMAIN"/ \
+--backend-frontname="$MAGENTO_ADMIN_FRONTNAME" \
+--db-host="$MYSQL_HOST" \
+--db-name="$MYSQL_DATABASE" \
+--db-user="$MYSQL_USER" \
+--db-password="$MYSQL_PASSWORD" \
+--use-rewrites=1 \
+--language=en_US \
+--currency=USD \
+--timezone=America/New_York \
+--search-engine=elasticsearch7 \
+--elasticsearch-host=$ES_HOST \
+--elasticsearch-port=$ES_PORT \
+--use-secure-admin=1 \
+--admin-use-security-key=1 \
+--session-save=files \
+--use-sample-data

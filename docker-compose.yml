@@ -1,0 +1,75 @@
+version: '3'
+services:
+  app:
+    image: webdevops/php-apache-dev:7.4
+    user: application
+    external_links:
+      - dev_mariadb:mariadb
+    networks:
+      default:
+        ipv4_address: 172.18.0.111
+    environment:
+      - WEB_ALIAS_DOMAIN=magento.vm
+      - WEB_DOCUMENT_ROOT=/app/pub
+      - PHP_DATE_TIMEZONE=EST
+      - PHP_DISPLAY_ERRORS=1
+      - PHP_MEMORY_LIMIT=2048M
+      - PHP_MAX_EXECUTION_TIME=300
+      - PHP_POST_MAX_SIZE=500M
+      - PHP_UPLOAD_MAX_FILESIZE=1024M
+    extra_hosts: &appextrahosts
+      - "app:172.18.0.111"
+      # - "redis:172.18.0.1"
+      - "elasticsearch:172.18.0.1"
+      # - "rabbitmq:172.18.0.1"
+      - "magento.vm:172.18.0.111"
+    volumes:
+      - ./:/app:cached
+      - /home/nath/.config/composer:/var/www/.composer:cached
+    expose:
+      - "80"
+      - "443"
+      - "22"
+    environment:
+      VIRTUAL_HOST: "magento.vm"
+      VIRTUAL_PORT: "443"
+      PHP_XDEBUG_ENABLED: 1
+      XDEBUG_SESSION: "PHPSTORM"
+      PHP_IDE_CONFIG: serverName=magento.vm
+    working_dir: "/app"
+
+  # redis:
+  #   image: redis:alpine
+  #   volumes:
+  #     - redis:/data
+  #   ports:
+  #     - "6379:6379"
+  #   extra_hosts: *appextrahosts
+
+  elasticsearch:
+    image: markoshust/magento-elasticsearch:7.9.3-1
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - "discovery.type=single-node"
+      ## Set custom heap size to avoid memory errors
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+      ## Avoid test failures due to small disks
+      ## More info at https://github.com/markshust/docker-magento/issues/488
+      - "cluster.routing.allocation.disk.threshold_enabled=false"
+      - "index.blocks.read_only_allow_delete"
+    extra_hosts: *appextrahosts
+
+# volumes:
+  # appdata:
+  # dbdata:
+  # rabbitmqdata:
+  # sockdata:
+  # ssldata:
+  # redis:
+
+networks:
+  default:
+    external:
+      name: dev
