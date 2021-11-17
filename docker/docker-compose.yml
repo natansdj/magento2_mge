@@ -24,7 +24,7 @@ services:
       # - "rabbitmq:172.18.0.1"
       - "magento.vm:172.18.0.111"
     volumes:
-      - ./:/app:cached
+      - ../:/app:cached
       - /home/nath/.config/composer:/var/www/.composer:cached
     expose:
       - "80"
@@ -51,6 +51,9 @@ services:
     ports:
       - "9200:9200"
       - "9300:9300"
+    networks:
+      default:
+        ipv4_address: 172.18.0.112
     environment:
       - "discovery.type=single-node"
       ## Set custom heap size to avoid memory errors
@@ -60,14 +63,6 @@ services:
       - "cluster.routing.allocation.disk.threshold_enabled=false"
       - "index.blocks.read_only_allow_delete"
     extra_hosts: *appextrahosts
-
-# volumes:
-  # appdata:
-  # dbdata:
-  # rabbitmqdata:
-  # sockdata:
-  # ssldata:
-  # redis:
 
 networks:
   default:
