@@ -1,11 +1,14 @@
 #!/bin/bash
 
-source bin/magento.env
+# Get current dir
+DIR="$(cd "$(dirname "$0")" && pwd)"
 
-bin/setup-composer-auth
+source $DIR/magento.env
+
+#$DIR/setup-composer-auth
 
 echo "Magento setup."
-bin/clinotty php -d memory_limit=-1 bin/magento setup:install \
+$DIR/clinotty php -d memory_limit=-1 bin/magento setup:install \
 --admin-firstname="$MAGENTO_ADMIN_FIRST_NAME" \
 --admin-lastname="$MAGENTO_ADMIN_LAST_NAME" \
 --admin-email="$MAGENTO_ADMIN_EMAIL" \

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Get current dir
+DIR="$(cd "$(dirname "$0")" && pwd)"
+
+echo "Deploy sample data."
+$DIR/clinotty php -d memory_limit=-1 bin/magento sampledata:deploy
