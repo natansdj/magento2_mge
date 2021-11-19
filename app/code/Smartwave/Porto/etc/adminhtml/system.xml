@@ -720,7 +720,7 @@
                 </field>
             </group>
             <group id="newsletter" translate="label" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
-                <label>Newsletter Popup</label>
+                <label>Landing Page Popup</label>
                 <field id="enable" translate="label comment" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Enabled</label>
                     <source_model>Smartwave\Porto\Model\Config\Settings\Newsletter\Enable</source_model>
