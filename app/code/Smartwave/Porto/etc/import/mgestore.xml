@@ -15,7 +15,7 @@
         <header>
             <logo_width>111</logo_width>
             <logo_height>44</logo_height>
-            <logo_src>default/logo_ecomblack_lg.png</logo_src>
+            <logo_src>default/mgestore_logo.png</logo_src>
         </header>
     </design>
     <dev>
@@ -41,7 +41,7 @@
             <sidebar_sticky>1</sidebar_sticky>
         </general>
         <header>
-            <header_type>4</header_type>
+            <header_type>3</header_type>
             <static_block_top>porto_custom_block_for_header_top</static_block_top>
             <static_block>porto_custom_block_for_header</static_block>
             <sticky_header>1</sticky_header>
@@ -85,7 +85,7 @@
             <footer_bottom>0</footer_bottom>
             <footer_store_switcher>0</footer_store_switcher>
             <footer_logo_src></footer_logo_src>
-            <footer_bottom_copyrights><![CDATA[© Porto Magento 2021. All Rights Reserved.]]></footer_bottom_copyrights>
+            <footer_bottom_copyrights><![CDATA[© 2021 M-GEE. All Rights Reserved.]]></footer_bottom_copyrights>
             <footer_bottom_custom_1>footer_bottom_block</footer_bottom_custom_1>
             <footer_bottom_custom_2></footer_bottom_custom_2>
         </footer>
@@ -128,7 +128,7 @@
         </product>
         <newsletter>
             <delay>2000</delay>
-            <logo_src>default/logo_ecomblack_lg.png</logo_src>
+            <logo_src>default/mgestore_logo.png</logo_src>
             <content><![CDATA[<h3 style="font-size: 1.125rem;line-height: 1.2" class="vc_custom_heading mb-2 align-left text-uppercase">Welcome to Our Store</h3>
 <p style="font-size: 0.875rem;line-height: 1.8571;letter-spacing:-.02em" class="vc_custom_heading mb-4 align-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod consectetur massa eu facilisis. Aliquam vitae odio quis erat placerat ullamcorper ac non enim. Praesent luctus justo sit amet leo semper, quis viverra odio auctor.</p>]]></content>
             <width>1280px</width>
@@ -137,36 +137,20 @@
         <contacts>
             <enable>1</enable>
             <full_width>0</full_width>
-            <address>Porto2 Store</address>
-            <latitude>-34.398</latitude>
-            <longitude>150.884</longitude>
+            <address>Jl. Kopo Bihbul Raya No.103, Sayati, Kec. Margahayu, Bandung, Jawa Barat 40228</address>
+            <latitude>-6.9633706</latitude>
+            <longitude>107.5753778</longitude>
             <zoom>18</zoom>
             <infoblock><![CDATA[<div class="row">
 <div class="col-md-12">
     <i class="porto-icon-phone"></i>
-    <p>0201 203 2032</p>
-    <p>0201 203 2032</p>
+    <p>(022) 5400671</p>
 </div>
 </div>
 <div class="row">
 <div class="col-md-12">
     <i class="porto-icon-mobile"></i>
-    <p>201-123-3922</p>
-    <p>302-123-3928</p>
-</div>
-</div>
-<div class="row">
-<div class="col-md-12">
-    <i class="porto-icon-mail-alt"></i>
-    <p>porto@gmail.com</p>
-    <p>porto@portotemplate.com</p>
-</div>
-</div>
-<div class="row">
-<div class="col-md-12">
-    <i class="porto-icon-skype"></i>
-    <p>porto_skype</p>
-    <p>proto_template</p>
+    <p>(022) 5400782</p>
 </div>
 </div>]]></infoblock>
             <customblock></customblock>
@@ -525,6 +509,43 @@ html .background-color-secondary {
             <enable>1</enable>
             <showing_counts>12</showing_counts>
         </instagram_photos>
+        <social_links>
+            <enable>1</enable>
+            <facebook_url>https://www.facebook.com/Mgee-3451c-2189580797786375/</facebook_url>
+            <instagram_url>https://www.instagram.com/mgee3451c/?hl=id</instagram_url>
+            <youtube_url>https://www.youtube.com/channel/UCeyP7cvvsyzirS8SO1qM7Hg</youtube_url>
+        </social_links>
     </sw_socialfeeds>
+    <admin>
+        <security>
+            <session_lifetime>31536000</session_lifetime>
+        </security>
+    </admin>
+    <general>
+        <country>
+            <optional_zip_countries>ID</optional_zip_countries>
+            <allow>ID,US</allow>
+            <default>ID</default>
+        </country>
+        <region>
+            <state_required>ID</state_required>
+        </region>
+        <locale>
+            <language>id</language>
+            <code>id_ID</code>
+            <timezone>Asia/Jakarta</timezone>
+            <weight_unit>kgs</weight_unit>
+        </locale>
+        <store_information>
+            <name>Mgee Store</name>
+            <phone>(022) 5400671</phone>
+            <hours>Monday-Friday, 08.30–17.00</hours>
+            <country_id>ID</country_id>
+            <region_id>Jawa Barat</region_id>
+            <postcode>40228</postcode>
+            <city>Bandung</city>
+            <street_line1>Jl. Kopo Bihbul Raya No.103, Sayati, Kec. Margahayu, Bandung, Jawa Barat 40228</street_line1>
+        </store_information>
+    </general>
 </config>
 </root>

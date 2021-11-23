@@ -330,10 +330,9 @@
          <content><![CDATA[<div class="widget_text widget widget_custom_html">
   <div class="textwidget custom-html-widget">
     <div class="payment-icons">
+      <span class="payment-icon mandiri"></span>
+      <span class="payment-icon mastercard"></span>
       <span class="payment-icon visa"></span>
-      <span class="payment-icon paypal"></span>
-      <span class="payment-icon stripe"></span>
-      <span class="payment-icon verisign"></span>
     </div>
   </div>
 </div>
@@ -851,9 +850,9 @@
                     <div class="wpb_wrapper vc_column-inner">
                       <div class="widget follow-us m-0">
                         <div class="share-links">
-                          <a href="#" target="_blank" title="Linkedin" class="share-instagram mr-3">Instagram</a>
-                          <a href="#" target="_blank" title="Twitter" class="share-twitter mr-3">Twitter</a>
-                          <a href="#" target="_blank" title="Facebook" class="share-facebook">Facebook</a>
+                          <a href="{{config path="sw_socialfeeds/social_links/facebook_url"}}" target="_blank" title="Facebook" class="share-facebook">Facebook</a>
+                          <a href="{{config path="sw_socialfeeds/social_links/instagram_url"}}" target="_blank" title="Instagram" class="share-instagram">Instagram</a>
+                          <a href="{{config path="sw_socialfeeds/social_links/youtube_url"}}" target="_blank" title="Youtube" class="share-youtube mr-3">Youtube</a>
                         </div>
                       </div>
                     </div>
@@ -871,11 +870,8 @@
       <h3 class="widget-title">CONTACT INFO</h3>
       <div class="contact-info contact-info-block">
         <ul class="contact-details">
-          <li><i class="far fa-dot-circle"></i> <strong>Address:</strong> <span>1234 Street Name, City, England</span></li>
-          <li><i class="fab fa-whatsapp"></i> <strong>Phone:</strong> <span>Toll Free (123) 456-7890</span></li>
-          <li>
-            <i class="far fa-envelope"></i> <strong>Email:</strong> <span><a href="mailto:mail@example.com">mail@example.com</a></span>
-          </li>
+          <li><i class="far fa-dot-circle"></i> <strong>{{config path="general/store_information/name"}}</strong> <span>{{config path="general/store_information/street_line1"}}</span></li>
+          <li><i class="fab fa-whatsapp"></i> <strong>Phone:</strong> <span>{{config path="general/store_information/phone"}}</span></li>
         </ul>
       </div>
     </div>
@@ -889,27 +885,14 @@
               <div class="wpb_wrapper vc_column-inner">
                 <h4 class="vc_custom_heading widget-title align-left" style="margin-bottom: 10px;">MY ACCOUNT</h4>
                 <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-12">
                     <div class="wpb_wrapper vc_column-inner">
                       <div class="wpb_text_column wpb_content_element">
                         <div class="wpb_wrapper">
                           <ul>
-                            <li><a title="About us" href="#">About us</a></li>
-                            <li><a title="Contact Us" href="#">Contact us</a></li>
-                            <li><a title="My Account" href="#">My Account</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="wpb_wrapper vc_column-inner">
-                      <div class="wpb_text_column wpb_content_element">
-                        <div class="wpb_wrapper">
-                          <ul>
-                            <li><a title="Order history" href="#">Order history</a></li>
-                            <li><a title="Contact us" href="#">Advanced search</a></li>
-                            <li><a title="Login" href="#">Login</a></li>
+                            <li><a title="About us" href="{{store url="about-porto"}}">About us</a></li>
+                            <li><a title="Contact Us" href="{{store url="contact"}}">Contact us</a></li>
+                            <li><a title="My Account" href="{{store url="customer/account/login"}}">My Account</a></li>
                           </ul>
                         </div>
                       </div>
@@ -920,28 +903,14 @@
             </div>
             <div class="widget-features col-md-5">
               <div class="wpb_wrapper vc_column-inner">
-                <h4 class="vc_custom_heading widget-title align-left" style="margin-bottom: 10px;">MAIN FEATURES</h4>
+                <h4 class="vc_custom_heading widget-title align-left" style="margin-bottom: 10px;">INFORMATION</h4>
                 <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-12">
                     <div class="wpb_wrapper vc_column-inner">
                       <div class="wpb_text_column wpb_content_element">
                         <div class="wpb_wrapper">
                           <ul>
-                            <li><a href="#">Super Fast Wordpress Theme</a></li>
-                            <li><a href="#">1st Fully working Ajax Theme</a></li>
-                            <li><a href="#">36 Unique Shop Layouts</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="wpb_wrapper vc_column-inner">
-                      <div class="wpb_text_column wpb_content_element">
-                        <div class="wpb_wrapper">
-                          <ul>
-                            <li><a href="#">Powerful Admin Panel</a></li>
-                            <li><a href="#">Mobile &amp; Retina Optimized</a></li>
+                            <li><a title="Login" href="{{store url="about-porto-4"}}">Our Company</a></li>
                           </ul>
                         </div>
                       </div>
@@ -955,27 +924,7 @@
                 <h4 class="vc_custom_heading widget-title align-left" style="margin-bottom: 10px;">WORKING DAYS/HOURS</h4>
                 <div class="wpb_text_column wpb_content_element pull-left m-b-none">
                   <div class="wpb_wrapper">
-                    <p><span style="letter-spacing: 0.26px;">Mon - Sun / 9:00AM - 8:00PM</span></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row no-padding" style="margin-top: -3px;border-top: 1px solid #313438;padding-top: 22px">
-            <div class="mb-3 mb-lg-0 col-md-12 col-lg-5 d-flex align-items-center">
-              <div class="wpb_wrapper vc_column-inner">
-                <div class="wpb_text_column wpb_content_element mb-0">
-                  <div class="wpb_wrapper"><p class="my-0">© Porto Magento 2021. All Rights Reserved</p></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12 col-lg-7">
-              <div class="wpb_wrapper vc_column-inner">
-                <div class="wpb_single_image wpb_content_element vc_align_left mb-0 section-copyright text-lg-right" style="margin-top: -1px;">
-                  <div class="wpb_wrapper">
-                    <div class="vc_single_image-wrapper vc_box_border_grey">
-                      <img src="{{media url=&quot;wysiwyg/smartwave/porto/footer/shop1_payment_logo.png&quot;}}" />
-                    </div>
+                    <p><span style="letter-spacing: 0.26px;">{{config path="general/store_information/hours"}}<br></span></p>
                   </div>
                 </div>
               </div>
@@ -984,6 +933,30 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="col-lg-12">
+    <div class="row no-padding" style="margin-top: -3px;border-top: 1px solid #313438;padding-top: 22px">
+        <div class="mb-3 mb-lg-0 col-md-12 col-lg-5 d-flex align-items-center">
+          <div class="wpb_wrapper vc_column-inner">
+            <div class="wpb_text_column wpb_content_element mb-0">
+              <div class="wpb_wrapper"><p class="my-0">© 2021 M-GEE. All Rights Reserved.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-7">
+          <div class="wpb_wrapper vc_column-inner">
+            <div class="wpb_single_image wpb_content_element vc_align_left mb-0 section-copyright text-lg-right" style="margin-top: -1px;">
+              <div class="wpb_wrapper">
+                <div class="vc_single_image-wrapper vc_box_border_grey footer-payment-icons">
+                  <img src="{{media url=&quot;porto/web/images/payment-icons/mandiri_sm.jpg&quot;}}" alt width="51" height="32" />
+                  <img src="{{media url=&quot;porto/web/images/payment-icons/mastercard_sm.png&quot;}}" alt width="51" height="32" />
+                  <img src="{{media url=&quot;porto/web/images/payment-icons/visa_sm.png&quot;}}" alt width="51" height="32" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
 </div>
 ]]></content>

@@ -11,7 +11,7 @@ services:
         ipv4_address: 172.18.0.111
     extra_hosts: &appextrahosts
       - "app:172.18.0.111"
-      # - "redis:172.18.0.1"
+      - "redis:172.18.0.113"
       - "elasticsearch:172.18.0.1"
       # - "rabbitmq:172.18.0.1"
       - "magento.vm:172.18.0.111"
@@ -38,13 +38,17 @@ services:
       PHP_IDE_CONFIG: serverName=magento.vm
     working_dir: "/app"
 
-  # redis:
-  #   image: redis:alpine
-  #   volumes:
-  #     - redis:/data
-  #   ports:
-  #     - "6379:6379"
-  #   extra_hosts: *appextrahosts
+  redis:
+    image: redis:alpine
+    container_name: gh_redis
+    volumes:
+      - redis:/data
+    expose:
+      - "6379"
+    extra_hosts: *appextrahosts
+    networks:
+      default:
+        ipv4_address: 172.18.0.113
 
   elasticsearch:
     image: markoshust/magento-elasticsearch:7.9.3-1
@@ -64,6 +68,9 @@ services:
       - "cluster.routing.allocation.disk.threshold_enabled=false"
       - "index.blocks.read_only_allow_delete"
     extra_hosts: *appextrahosts
+
+volumes:
+  redis:
 
 networks:
   default:

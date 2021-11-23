@@ -30,5 +30,14 @@ $DIR/clinotty php -d memory_limit=-1 bin/magento setup:install \
 --elasticsearch-port=$ES_PORT \
 --use-secure-admin=1 \
 --admin-use-security-key=1 \
---session-save=files \
+--cache-backend=redis \
+--cache-backend-redis-server=$REDIS_SERVER \
+--cache-backend-redis-db=0 \
+--page-cache=redis \
+--page-cache-redis-server=$REDIS_SERVER \
+--page-cache-redis-db=1 \
+--session-save=redis \
+--session-save-redis-host=$REDIS_SERVER \
+--session-save-redis-log-level=4 \
+--session-save-redis-db=2 \
 --use-sample-data

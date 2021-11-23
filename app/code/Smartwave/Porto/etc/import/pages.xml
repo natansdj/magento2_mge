@@ -474,6 +474,18 @@
             </script>
           </div>
         </div>
+
+        <div class="porto-separator"><hr class="separator-line align_center solid" style="background-color: #e7e7e7;" /></div>
+        <div class="row">
+            <div class="vc_column_container col-md-12">
+                <div class="wpb_wrapper vc_column-inner">
+                    <div class="row" style="padding-top: 70px;padding-bottom: 40px">
+                    {{block class="Smartwave\Porto\Block\Template" name="instagram" padding_item="10px" template="Smartwave_SocialFeed::instagramphotos.phtml"}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
       </div>
     </div>
   </div>

@@ -71,3 +71,6 @@ atlassian*
 !/generated/.htaccess
 .DS_Store
 
+/pub/media/logo/default/*
+!/pub/media/logo/default/
+!/pub/media/logo/default/mgestore_logo.png
