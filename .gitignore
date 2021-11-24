@@ -51,10 +51,11 @@ atlassian*
 /pub/media/custom_options/*
 !/pub/media/custom_options/.htaccess
 /pub/media/theme/*
+!/pub/media/theme/preview
 /pub/media/theme_customization/*
 !/pub/media/theme_customization/.htaccess
-/pub/media/wysiwyg/*
-!/pub/media/wysiwyg/.htaccess
+#/pub/media/wysiwyg/*
+#!/pub/media/wysiwyg/.htaccess
 /pub/media/tmp/*
 !/pub/media/tmp/.htaccess
 /pub/media/captcha/*
@@ -71,6 +72,4 @@ atlassian*
 !/generated/.htaccess
 .DS_Store
 
-/pub/media/logo/default/*
-!/pub/media/logo/default/
-!/pub/media/logo/default/mgestore_logo.png
+!/pub/media/logo/default

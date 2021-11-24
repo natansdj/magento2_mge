@@ -6310,6 +6310,86 @@ background: none !important;
     <li class="ui-menu-item level0">
         <a href="#" class="level-top"><span>Features</span></a>
     </li>
+    <li class="ui-menu-item level0 staticwidth parent">
+      <div class="open-children-toggle"></div>
+      <a href="#" class="level-top">
+        <span>Categories</span>
+      </a>
+      <div class="level0 submenu" style="width: 650px; left: -9999px; right: auto;">
+        <div class="container">
+          <div class="row">
+            <ul class="subchildmenu col-md-8 mega-columns columns2">
+              <li class="ui-menu-item level1 parent">
+                <div class="open-children-toggle"></div>
+                <a href="javascript:void(0)" style="pointer-events: none;"><span>Variations 1</span></a>
+                <ul class="subchildmenu">
+                  <li class="ui-menu-item level2">
+                    <a href="#"><span>Fullwidth Banner</span></a>
+                  </li>
+                  <li class="ui-menu-item level2">
+                    <a href="#"><span>Boxed Image Banner</span></a>
+                  </li>
+                  <li class="ui-menu-item level2">
+                    <a href="#"><span>Boxed Slider Banner</span></a>
+                  </li>
+                  <li class="ui-menu-item level2">
+                    <a href="#"><span>Left Sidebar</span></a>
+                  </li>
+                  <li class="ui-menu-item level2">
+                    <a href="#"><span>Right Sidebar</span></a>
+                  </li>
+                  <li class="ui-menu-item level2">
+                    <a href="#"><span>Product Flex Grid</span></a>
+                  </li>
+                  <li class="ui-menu-item level2">
+                    <a href="#"><span>Product List Item Types</span></a>
+                  </li>
+                </ul>
+              </li>
+              <li class="ui-menu-item level1 parent">
+                <div class="open-children-toggle"></div>
+                <a href="javascript:void(0)" style="pointer-events: none;"><span>Variations 2</span></a>
+                <ul class="subchildmenu">
+                  <li class="ui-menu-item level2">
+                    <a href="#"><span>Ajax Infinite Scroll</span><span class="cat-label cat-label-label1">New</span></a>
+                  </li>
+                  <li class="ui-menu-item level2">
+                    <a href="#"><span>3 Columns Products</span></a>
+                  </li>
+                  <li class="ui-menu-item level2">
+                    <a href="#"><span>4 Columns Products</span></a>
+                  </li>
+                  <li class="ui-menu-item level2">
+                    <a href="#"><span>5 Columns Products</span></a>
+                  </li>
+                  <li class="ui-menu-item level2">
+                    <a href="#"><span>6 Columns Products</span></a>
+                  </li>
+                  <li class="ui-menu-item level2">
+                    <a href="javascript:void(0)"><span>7 Columns Products</span></a>
+                  </li>
+                  <li class="ui-menu-item level2">
+                    <a href="javascript:void(0)"><span>8 Columns Products</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <div class="menu-right-block col-md-4">
+              <div
+                style="
+                  background-position: -15px center;
+                  background-image: url('{{media url=&quot;wysiwyg/smartwave/porto/category/menu-banner.jpg&quot;}}');
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  width: 100%;
+                  height: 100%;
+                "
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
 </ul>]]></content>
          <is_active>1</is_active>
       </cms_item>
