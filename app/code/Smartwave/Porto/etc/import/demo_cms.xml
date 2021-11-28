@@ -1,5 +1,24 @@
 <root>
 <demos>
+    <mgestore>
+        <pages>
+            <item>about-porto</item>
+            <item>about-porto-4</item>
+            <item>no-route-2</item>
+            <item>porto_home_mgestore</item>
+        </pages>
+        <blocks>
+            <item>porto_custom_notice</item>
+            <item>footer_middle_group_demo6</item>
+            <item>porto_category_side_custom_block</item>
+            <item>porto_product_side_custom_block</item>
+            <item>porto_custom_menu_before</item>
+            <item>porto_custom_menu</item>
+            <item>banner_category_demo6</item>
+            <item>porto_custom_tab</item>
+            <item>porto_about_us_4_top_block</item>
+        </blocks>
+    </mgestore>
     <demo01>
         <pages>
             <item>about-porto</item>

@@ -1,6 +1,6 @@
 /**
  * WARNING: Do not change this file. Your changes will be lost.
- * 2021-11-23 11:47:46 */
+ * 2021-06-27 10:07:31 */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');body.boxed {
 }
 @media (min-width: 768px) {
@@ -33,43 +33,43 @@ h1, h2, h3, h4, h5, h6 {
     color: #222529;
     letter-spacing: normal;
 }
-h1 {
+h1 { 
     font-weight: 700;
     font-size: 30px;
-    line-height: 44px;
+    line-height: 44px; 
     margin: 0 0 32px 0;
 }
-h2 {
+h2 { 
     font-weight: 700;
     font-size: 25px;
-    line-height: 40px;
+    line-height: 40px; 
     margin: 0 0 32px 0;
 }
-h3 {
+h3 { 
     font-weight: 700;
     font-size: 24px;
-    line-height: 30px;
+    line-height: 30px; 
     margin: 0 0 20px 0;
 }
-h4 {
+h4 { 
     font-weight: 700;
     font-size: 20px;
-    line-height: 27px;
+    line-height: 27px; 
     margin: 0 0 14px 0;
 }
-h5 {
+h5 { 
     font-weight: 700;
     font-size: 14px;
-    line-height: 18px;
+    line-height: 18px; 
     margin: 0 0 14px 0;
 }
-h6 {
+h6 { 
     font-weight: 600;
     font-size: 14px;
-    line-height: 18px;
+    line-height: 18px; 
     margin: 0 0 14px 0;
 }
-p {
+p { 
     letter-spacing: 0;
 }
 .home-banner-slider h2.vc_custom_heading, .custom-font4 {
@@ -78,10 +78,10 @@ p {
 html .heading-secondary, html .lnk-secondary, html .text-color-secondary {
     color: #ff7272;
 }
-html .action.primary, html .btn {
+html .action.primary, html .btn {  
     padding: .533rem .933rem;
     font-size: .8rem;
-    line-height: 1.42857;
+    line-height: 1.42857; 
 }
 html .action.primary {
     color: #fff;
@@ -135,8 +135,8 @@ html .btn-dark {
     background-color: #222529;
     border-color: #222529 #222529 #0b0c0e;
 }
-html .btn-borders.btn-dark:hover,
-html .btn-borders.btn-dark:focus,
+html .btn-borders.btn-dark:hover, 
+html .btn-borders.btn-dark:focus, 
 html .btn-borders.btn-dark:active {
     background-color: #222529;
     border-color: #222529;
@@ -166,15 +166,15 @@ html .background-color-secondary {
     width: 18px;
     height: 18px;
     border-color: #222529;
-  }
-  .owl-carousel.dots-style-1 .owl-dot.active span,
+  } 
+  .owl-carousel.dots-style-1 .owl-dot.active span, 
   .owl-carousel.dots-style-1 .owl-dot:hover span {
     color: #222529;
   }
   .owl-carousel.dots-style-1 .owl-dot span:after {
     border-width: 4px!important;
-  }
-.page-wrapper > .breadcrumbs {
+  } 
+.page-wrapper > .breadcrumbs { 
     padding: 12px 0;
 }
 .page-wrapper > .breadcrumbs .items {
@@ -191,7 +191,7 @@ html .background-color-secondary {
 .footer .widget .widgettitle {
     font-size: 1rem;
     letter-spacing: -.02em;
-}
+}  
 .footer .widget {
     margin-bottom: 1.875rem;
     margin-top: 1.875rem;
@@ -202,7 +202,7 @@ html .background-color-secondary {
 .footer, .footer p {
     letter-spacing: 0;
 }
-.footer-middle > .container {
+.footer-middle > .container { 
     padding-top: 5rem;
     padding-bottom: 2.4rem;
 }
@@ -210,8 +210,8 @@ html .background-color-secondary {
     font-size: 15px;
     font-weight: 700;
 }
-.footer-middle .block {
-    line-height: 1;
+.footer-middle .block { 
+    line-height: 1; 
 }
 .footer .follow-us .share-links a {
     width: 48px;
@@ -242,6 +242,6 @@ html .background-color-secondary {
 .footer .contact-info .contact-details strong {
     text-transform: uppercase;
 }
-.footer .contact-info .contact-details strong, .footer .contact-info .contact-details span {
-    line-height: 1.5;
+.footer .contact-info .contact-details strong, .footer .contact-info .contact-details span { 
+    line-height: 1.5; 
 }

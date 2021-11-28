@@ -119,6 +119,7 @@ class Demo extends \Magento\Config\Block\System\Config\Form\Field
     public function getDemos()
     {
         return  [
+            ['demo_version' => 'mgestore', 'label' => __('MgeStore')],
             ['demo_version' => 'demo01', 'label' => __('Demo 1')],
             ['demo_version' => 'demo02', 'label' => __('Demo 2')],
             ['demo_version' => 'demo03', 'label' => __('Demo 3')],
@@ -147,7 +148,7 @@ class Demo extends \Magento\Config\Block\System\Config\Form\Field
             ['demo_version' => 'demo26', 'label' => __('Demo 26')],
             ['demo_version' => 'demo27', 'label' => __('Demo 27')],
             ['demo_version' => 'demo28', 'label' => __('Demo 28')],
-            ['demo_version' => 'demo29', 'label' => __('Demo 29')], 
+            ['demo_version' => 'demo29', 'label' => __('Demo 29')],
         ];
     }
 

@@ -1,4 +1,5 @@
 <?php
+
 namespace Smartwave\Porto\Model\Config\Settings\Installation;
 
 class Demoversion implements \Magento\Framework\Option\ArrayInterface
@@ -7,6 +8,7 @@ class Demoversion implements \Magento\Framework\Option\ArrayInterface
     {
         return [
             ['value' => '0', 'label' => __('All')],
+            ['value' => 'mgestore', 'label' => __('MgeStore')],
             ['value' => 'demo01', 'label' => __('Demo 1')],
             ['value' => 'demo02', 'label' => __('Demo 2')],
             ['value' => 'demo03', 'label' => __('Demo 3')],
@@ -42,36 +44,37 @@ class Demoversion implements \Magento\Framework\Option\ArrayInterface
     public function toArray()
     {
         return [
-            '0' => __('All'),
-            'demo01' => __('Demo 1'),
-            'demo02' => __('Demo 2'),
-            'demo03' => __('Demo 3'),
-            'demo04' => __('Demo 4'),
-            'demo05' => __('Demo 5'),
-            'demo06' => __('Demo 6'),
-            'demo07' => __('Demo 7'),
-            'demo08' => __('Demo 8'),
-            'demo09' => __('Demo 9'),
-            'demo10' => __('Demo 10'),
-            'demo11' => __('Demo 11'),
-            'demo12' => __('Demo 12'),
-            'demo13' => __('Demo 13'),
-            'demo14' => __('Demo 14'),
-            'demo15' => __('Demo 15'),
-            'demo16' => __('Demo 16'),
-            'demo17' => __('Demo 17'),
-            'demo18' => __('Demo 18'),
-            'demo19' => __('Demo 19'),
-            'demo20' => __('Demo 20'),
-            'demo21' => __('Demo 21'),
-            'demo22' => __('Demo 22'),
-            'demo23' => __('Demo 23'),
-            'demo24' => __('Demo 24'),
-            'demo25' => __('Demo 25'),
-            'demo26' => __('Demo 26'),
-            'demo27' => __('Demo 27'),
-            'demo28' => __('Demo 28'),
-            'demo29' => __('Demo 29') 
+            '0'        => __('All'),
+            'mgestore' => __('MgeStore'),
+            'demo01'   => __('Demo 1'),
+            'demo02'   => __('Demo 2'),
+            'demo03'   => __('Demo 3'),
+            'demo04'   => __('Demo 4'),
+            'demo05'   => __('Demo 5'),
+            'demo06'   => __('Demo 6'),
+            'demo07'   => __('Demo 7'),
+            'demo08'   => __('Demo 8'),
+            'demo09'   => __('Demo 9'),
+            'demo10'   => __('Demo 10'),
+            'demo11'   => __('Demo 11'),
+            'demo12'   => __('Demo 12'),
+            'demo13'   => __('Demo 13'),
+            'demo14'   => __('Demo 14'),
+            'demo15'   => __('Demo 15'),
+            'demo16'   => __('Demo 16'),
+            'demo17'   => __('Demo 17'),
+            'demo18'   => __('Demo 18'),
+            'demo19'   => __('Demo 19'),
+            'demo20'   => __('Demo 20'),
+            'demo21'   => __('Demo 21'),
+            'demo22'   => __('Demo 22'),
+            'demo23'   => __('Demo 23'),
+            'demo24'   => __('Demo 24'),
+            'demo25'   => __('Demo 25'),
+            'demo26'   => __('Demo 26'),
+            'demo27'   => __('Demo 27'),
+            'demo28'   => __('Demo 28'),
+            'demo29'   => __('Demo 29')
         ];
     }
 }

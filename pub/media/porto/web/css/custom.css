@@ -571,10 +571,15 @@ article.post .post-date .month, .post-item .post-date .month {box-shadow: 0 -1px
 .payment-icons {display: flex;align-items: center;flex-wrap: nowrap;}
 .payment-icons .payment-icon {display: inline-block;vertical-align: middle;margin: 3px;width: 56px;height: 32px;background-color: #d6d3cc;background-size: 80% auto;background-repeat: no-repeat;background-position: center;transition: opacity .25s;filter: invert(1);border-radius: 4px;}
 .payment-icons .payment-icon:hover {opacity: .7;}
+.payment-icons .mandiri {background-image: url(../images/payment-icons/mandiri_sm.jpg);}
+.payment-icons .mastercard {background-image: url(../images/payment-icons/mastercard_sm.png);}
+.payment-icons .visa_sm {background-image: url(../images/payment-icons/visa_sm.png);}
 .payment-icons .visa {background-image: url(../images/payment-icons/payment-visa.svg);}
 .payment-icons .paypal {background-image: url(../images/payment-icons/payment-paypal.svg);background-size: 85% auto;background-position: 50% 48%;}
 .payment-icons .stripe {background-image: url(../images/payment-icons/payment-stripe.png);background-size: 60% auto;}
 .payment-icons .verisign {background-image: url(../images/payment-icons/payment-verisign.svg);}
+
+.footer-payment-icons img {margin: 0 5px 0 5px;}
 
 /*endfooter*/
 .sidebar.sidebar-second { order: 3; width: 100%;flex: 0 0 100%;}
