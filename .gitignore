@@ -74,6 +74,7 @@ atlassian*
 #Ignore base magento2
 /dev
 /app/etc/*
+!/app/etc/di.xml
 /app/autoload.php
 /app/bootstrap.php
 /app/.htaccess
@@ -125,3 +126,4 @@ atlassian*
 /auth.json.sample
 /.htaccess
 *.md
+!/README_MGEE.md
