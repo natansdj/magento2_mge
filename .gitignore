@@ -127,3 +127,7 @@ atlassian*
 /.htaccess
 *.md
 !/README_MGEE.md
+/.ftpquota
+/home.htm
+/index.html_
+

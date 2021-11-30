@@ -33,15 +33,16 @@ docker/clinotty php bin/magento cache:flush
 
 Installation
 - clear static files
-  - rm -rf cache/* page_cache/* generation/*
+  1. rm -rf cache/* page_cache/* generation/*
 - Disable all cache related section that you have in your magento.
+- php -d memory_limit=-1 bin/magento setup:upgrade
 - chown -R mgee7192:mgee7192 /home/mgee7192/public_html
 - mariadb 10.5 support
   - https://github.com/magento/magento2/issues/31109#issue-754308571
 - disable elasticsearch for gh_magento2
-  - php -f bin/magento config:show catalog/search/engine
+  - php -d memory_limit=-1 bin/magento config:show catalog/search/engine
+    - default : elasticsearch7
   - php bin/magento config:set catalog/search/engine none
-- php -d memory_limit=-1 bin/magento setup:upgrade
 
 - Select Select Smartwave Porto Theme In :
   1. Stores > Configuration > General > Design > Design Theme > Design Theme
