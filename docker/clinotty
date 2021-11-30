@@ -1,0 +1,8 @@
+#!/bin/bash
+[ -z "$1" ] && echo "Please specify a CLI command (ex. ls)" && exit
+
+# Get current dir
+DIR="$(cd "$(dirname "$0")" && pwd)"
+
+# -T: Disable pseudo-tty allocation
+docker-compose --project-directory $DIR exec -T app "$@"

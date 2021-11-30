@@ -80,7 +80,6 @@ atlassian*
 /app/.htaccess
 /pub/.htaccess
 /lib
-/docker
 /setup
 /phpserver
 /pub/media/mageplaza/search/default_0.js
@@ -127,7 +126,10 @@ atlassian*
 /.htaccess
 *.md
 !/README_MGEE.md
+!/docker/*.md
 /.ftpquota
 /home.htm
 /index.html_
-
+/backup/*.sql.gz
+/backup/*.tar.gz
+/backup/*.sql

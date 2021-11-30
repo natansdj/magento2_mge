@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# Get current dir
+DIR="$(cd "$(dirname "$0")" && pwd)"
+
+source $DIR/magento.env
+
+#$DIR/setup-composer-auth
+
+echo "Magento setup."
+$DIR/clinotty php -d memory_limit=-1 bin/magento setup:install \
+--admin-firstname="$MAGENTO_ADMIN_FIRST_NAME" \
+--admin-lastname="$MAGENTO_ADMIN_LAST_NAME" \
+--admin-email="$MAGENTO_ADMIN_EMAIL" \
+--admin-user="$MAGENTO_ADMIN_USER" \
+--admin-password="$MAGENTO_ADMIN_PASSWORD" \
+--base-url=https://"$DOMAIN"/ \
+--base-url-secure=https://"$DOMAIN"/ \
+--backend-frontname="$MAGENTO_ADMIN_FRONTNAME" \
+--db-host="$MYSQL_HOST" \
+--db-name="$MYSQL_DATABASE" \
+--db-user="$MYSQL_USER" \
+--db-password="$MYSQL_PASSWORD" \
+--use-rewrites=1 \
+--language=en_US \
+--currency=USD \
+--timezone=America/New_York \
+--search-engine=elasticsearch7 \
+--elasticsearch-host=$ES_HOST \
+--elasticsearch-port=$ES_PORT \
+--use-secure-admin=1 \
+--admin-use-security-key=1 \
+--cache-backend=redis \
+--cache-backend-redis-server=$REDIS_SERVER \
+--cache-backend-redis-db=0 \
+--page-cache=redis \
+--page-cache-redis-server=$REDIS_SERVER \
+--page-cache-redis-db=1 \
+--session-save=redis \
+--session-save-redis-host=$REDIS_SERVER \
+--session-save-redis-log-level=4 \
+--session-save-redis-db=2 \
+--use-sample-data
