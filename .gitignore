@@ -70,3 +70,7 @@ atlassian*
 /generated/*
 !/generated/.htaccess
 .DS_Store
+
+#Ignore base magento2
+/dev/*
+!/dev/.htaccess
