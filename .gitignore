@@ -72,5 +72,6 @@ atlassian*
 .DS_Store
 
 #Ignore base magento2
+.github
 /dev/*
 !/dev/.htaccess
