@@ -100,7 +100,7 @@
             <addtocompare>1</addtocompare>
             <addtowishlist>1</addtowishlist>
             <qty_field>0</qty_field>
-            <page_layout>1column</page_layout>
+            <page_layout>2columns-left</page_layout>
             <category_description>full_width</category_description>
             <side_custom_block>porto_category_side_custom_block</side_custom_block>
         </category>
