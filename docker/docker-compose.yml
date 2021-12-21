@@ -5,7 +5,7 @@ services:
     user: application
     container_name: gh_magento2
     external_links:
-      - dev_mariadb:mariadb
+      - dev_mariadb:dev_mariadb
     networks:
       default:
         ipv4_address: 172.18.0.111
