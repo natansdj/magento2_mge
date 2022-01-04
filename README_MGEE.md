@@ -32,16 +32,24 @@ docker/clinotty php bin/magento cache:flush
 
 
 ####Installation
+https://www.magetop.com/blog/install-magento-2-4-2-on-ubuntu/
+
 - clear static files
-  - rm -rf var/cache
+  - cp pub/static/.htaccess .htaccess.static
+  - rm -rf pub/static/* generated/* var/page_cache/* var/cache/* var/view_preprocessed/*
   - rm -rf var/composer_home
   - rm -rf var/generation
-  - rm -rf var/page_cache
-  - rm -rf var/view_preprocessed
-  - cp pub/static/.htaccess .htaccess.static
-  - rm -rf pub/static
   - mkdir pub/static
   - mv .htaccess.static pub/static/
+  - chown -R www-data:www-data .*
+  - find . -type d -exec chmod 0755 {} \;
+  - find . -type f -exec chmod 0644 {} \;
+  - find ./var -type d -exec chmod 777 {} \;
+  - find ./pub/media -type d -exec chmod 777 {} \;
+  - find ./pub/static -type d -exec chmod 777 {} \;
+  - php -d memory_limit=-1 bin/magento cache:clean && php -d memory_limit=-1 bin/magento cache:flush
+  - php bin/magento setup:upgrade
+  - php bin/magento setup:di:compile && php bin/magento setup:static-content:deploy -f
 - Disable all cache related section that you have in your magento.
 - php -d memory_limit=-1 bin/magento setup:upgrade
 - (PROD) change file/path owner
@@ -59,8 +67,11 @@ docker/clinotty php bin/magento cache:flush
 - Import Demo
 - php -d memory_limit=-1 bin/magento cache:flush
 - regenerate static files, if site is broken
+  - php -d memory_limit=-1 bin/magento setup:di:compile
   - php -d memory_limit=-1 bin/magento setup:static-content:deploy -f
   - check /pub/static/.htaccess file is exists and has correct permission (664)
+- If versioning static files broken disable static versioning
+  - adding 'dev/static/sign' as 0 on the core_config_data table
 
 ####To reenable elasticsearch on magento
 - php -d memory_limit=-1 bin/magento config:set catalog/search/engine elasticsearch7
@@ -71,7 +82,6 @@ docker/clinotty php bin/magento cache:flush
 - php -d memory_limit=-1 bin/magento indexer:reindex
 
 ####Porto Notes
-#####Products : 
+#####Products :
 product layout : 2 column with right bar
 block right bar : porto_product_side_custom_block
-
