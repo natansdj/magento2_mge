@@ -97,7 +97,7 @@
             <rating_star>1</rating_star>
             <product_price>1</product_price>
             <actions>1</actions>
-            <addtocompare>1</addtocompare>
+            <addtocompare>0</addtocompare>
             <addtowishlist>1</addtowishlist>
             <qty_field>0</qty_field>
             <page_layout>2columns-left</page_layout>
