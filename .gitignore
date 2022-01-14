@@ -75,3 +75,8 @@ atlassian*
 .github
 /dev/*
 !/dev/.htaccess
+
+#ignore prod files
+error_log
+index.html
+.htaccess.old
