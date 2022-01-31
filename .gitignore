@@ -80,3 +80,4 @@ atlassian*
 error_log
 index.html
 .htaccess.old
+.ftpquota
