@@ -1,0 +1,292 @@
+<?php
+/**
+ * Webkul Software.
+ *
+ * @category  Webkul
+ * @package   Webkul_MpIndonesianShipping
+ * @author    Webkul
+ * @copyright Copyright (c) Webkul Software Private Limited (https://webkul.com)
+ * @license   https://store.webkul.com/license.html
+ */
+?>
+<?php if ($block->getConfigData('active') && $block->getConfigData('allow_seller')):?>
+    <?php
+    $isSecure = $block->getLayout()
+        ->createBlock(\Webkul\MpIndonesianShipping\Block\Account\Navigation::class)
+        ->isSecure();
+    ?>
+<form class="form"
+    action="<?= $block->escapeHtml($block->getUrl('mpindonesian/shipping/index', ['_secure' => $isSecure])) ?>"
+    method="post" id="form-validate" data-mage-init='{"validation":{}}' enctype="multipart/form-data"
+    data-hasrequired="<?= $block->escapeHtml(__('* Required Fields')) ?>" autocomplete="off">
+    <fieldset class="fieldset info">
+        <legend class="legend"><span><?= $block->escapeHtml(__('Marketplace Indonesian Configuration')) ?></span>
+            <button type="submit" class="button wk-mp-btn action save primary">
+                <span><span><?= $block->escapeHtml(__('Save')) ?></span></span>
+            </button>
+        </legend>
+        <br>
+
+        <div class="field required">
+            <label class="label"><span><?= $block->escapeHtml(__("Api Url")); ?>:</span></label>
+            <div class="control">
+                <select id="mp_indonesian_api_url" class="input-select" name="mp_indonesian_api_url">
+                    <option value="<?= $block->escapeHtml($block->getStarterUrl())?>"
+                        <?= $block->escapeHtml(
+                            ($block->_getCustomerData()->getMpIndonesianApiUrl() == $block->getStarterUrl())
+                        ) ? 'selected' : ''?>><?= $block->escapeHtml(__('Starter ('.$block->getStarterUrl().')'))?>
+                    </option>
+                    <option value="<?= $block->escapeHtml($block->getBasicUrl())?>"
+                          <?= $block->escapeHtml(
+                              ($block->_getCustomerData()->getMpIndonesianApiUrl() == $block->getBasicUrl())
+                          ) ? 'selected' : ''?>><?= $block->escapeHtml(__('Basic ('.$block->getBasicUrl().')'))?>
+                    </option>
+                    <option value="<?= $block->escapeHtml($block->getProUrl())?>"
+                          <?= $block->escapeHtml(
+                              ($block->_getCustomerData()->getMpIndonesianApiUrl() == $block->getProUrl())
+                          ) ? 'selected' : ''?>><?= $block->escapeHtml(__('Pro ('.$block->getProUrl().')'))?>
+                    </option>
+                </select>
+            </div>
+        </div>
+
+        <div class="field required">
+            <label class="label"><span><?= $block->escapeHtml(__("Api Key")); ?>:</span></label>
+            <?php
+            $key = $block->_getCustomerData()->getMpIndonesianApiKey();
+            ?>
+            <div class="control">
+                <input id="mp_indonesian_api_key" type="password" name="mp_indonesian_api_key"
+                data-validate="{required:true}"
+                value="<?= $block->escapeHtml($key) != ''? "******":'';?>" />
+            </div>
+        </div>
+
+        <!--  Start Starter Section -->
+        <?php
+        $starterUrl = $block->_getCustomerData()->getMpIndonesianApiUrl() == $block->getStarterUrl();
+        ?>
+        <div id="starter_section"
+            class="<?= $block->escapeHtml($starterUrl) ?'show':'hide'; ?>">
+            <div class="field required">
+                <label class="label"><span><?= $block->escapeHtml(__("Domestic Shipping Couriers")); ?>:</span></label>
+                <div class="control">
+                <?php
+                    $data = $block->getAllStarterDomesticCouriers();
+                    $selectedData = (array)json_decode($block->_getCustomerData()->getMpIndoStarterDomCouriers());
+                ?>
+                    <select id="mp_indo_starter_dom_couriers"
+                        class="multiselect" multiple size="10" name="mp_indo_starter_dom_couriers[]">
+                        <?php
+                        foreach ($data as $option) {
+                            ?>
+                            <option value="<?= $block->escapeHtml($option['value'])?>"
+                                <?= $block->escapeHtml(
+                                    (in_array($option['value'], $selectedData) == true)
+                                ) ? 'selected' : ''?>><?= $block->escapeHtml($option['label'])?>
+                            </option>
+                            <?php
+                        }
+                        ?>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!--  End Starter Section -->
+
+        <!--  Start Basic Section -->
+        <?php
+        $basicUrl = $block->_getCustomerData()->getMpIndonesianApiUrl() == $block->getBasicUrl();
+        ?>
+        <div id="basic_section"
+            class="<?= $block->escapeHtml($basicUrl) ?'show':'hide'; ?>">
+            <div class="field required">
+                <label class="label"><span><?= $block->escapeHtml(__("Domestic Shipping Couriers")); ?>:</span></label>
+                <div class="control">
+                <?php
+                    $data = $block->getAllBasicDomesticCouriers();
+                    $selectedData = (array)json_decode($block->_getCustomerData()->getMpIndoBasicDomCouriers());
+                ?>
+                    <select id="mp_indo_basic_dom_couriers"
+                        class="multiselect" multiple size="10" name="mp_indo_basic_dom_couriers[]">
+                    <?php
+                    foreach ($data as $option) {
+                        ?>
+                        <option value="<?= $block->escapeHtml($option['value'])?>"
+                            <?= $block->escapeHtml(
+                                (in_array($option['value'], $selectedData) == true)
+                            ) ? 'selected' : ''?>><?= $block->escapeHtml($option['label'])?>
+                        </option>
+                        <?php
+                    }
+                    ?>
+                    </select>
+                </div>
+            </div>
+
+            <div class="field required">
+                <label class="label">
+                    <span>
+                        <?= $block->escapeHtml(__("International Shipping Couriers")); ?>:
+                    </span>
+                </label>
+                <div class="control">
+                <?php
+                    $data = $block->getAllBasicInternationalCouriers();
+                    $selectedData = (array)json_decode($block->_getCustomerData()->getMpIndoBasicIntCouriers());
+                ?>
+                    <select id="mp_indo_basic_int_couriers"
+                        class="multiselect" multiple size="10" name="mp_indo_basic_int_couriers[]">
+                        <?php
+                        foreach ($data as $option) {
+                            ?>
+                            <option value="<?= $block->escapeHtml($option['value'])?>"
+                                <?= $block->escapeHtml(
+                                    (in_array($option['value'], $selectedData) == true)
+                                ) ? 'selected' : ''?>><?= $block->escapeHtml($option['label'])?></option>
+                            <?php
+                        }
+                        ?>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!--  End Basic Section -->
+
+        <!--  Start Pro Section -->
+        <?php
+        $proUrl = $block->_getCustomerData()->getMpIndonesianApiUrl() == $block->getProUrl();
+        ?>
+        <div id="pro_section" class="<?= $block->escapeHtml($proUrl) ?'show':'hide'; ?>">
+
+            <div class="field required">
+                <label class="label"><span><?= $block->escapeHtml(__("Origin Type")); ?>:</span></label>
+                <div class="control">
+                    <?php
+                    $originType = $block->_getCustomerData()->getMpIndonesianOriginType();
+                    ?>
+                    <select class="input-select" name="mp_indonesian_origin_type" id="mp_indonesian_origin_type">
+                        <option value="0"><?= $block->escapeHtml(__('City')); ?></option>
+                        <option value="1" <?= $block->escapeHtml($originType == 1) ? 'selected' : ''; ?>>
+                            <?= $block->escapeHtml(__('Sub District')); ?>
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <?php
+            $originType = $block->_getCustomerData()->getMpIndonesianOriginType();
+            ?>
+            <div id="subdistricts_section"
+                class="<?= $block->escapeHtml($originType == 1) ?'show' : 'hide'; ?>">
+                <div class="field required">
+                    <label class="label"><span><?= $block->escapeHtml(__("Sub Districts")); ?>:</span></label>
+                    <div class="control">
+                        <select class="input-select" name="mp_indonesian_origin_id" id="mp_indonesian_origin_id">
+                        <?php
+                        $data = (array)json_decode($block->getAllSubDistrict(), true);
+                        if (isset($data['rajaongkir']['status']['code'])) {
+                            if ($data['rajaongkir']['status']['code'] == 200) {
+                                ?>
+                                <option value="-1">
+                                    <?= $block->escapeHtml(__('--------- Select Sub District ---------'))?>
+                                </option>
+                                <?php
+                                $results = $data['rajaongkir']['results'];
+                                $originId = $block->_getCustomerData()->getMpIndonesianOriginId();
+                                foreach ($results as $result) {
+                                    ?>
+                                    <option
+                                        value="<?= $block->escapeHtml($result['subdistrict_id']) ?>"
+                                        <?= $block->escapeHtml(
+                                            ($originId == $result['subdistrict_id'])
+                                        ) ? 'selected' : ''; ?>><?= $block->escapeHtml($result['subdistrict_name']) ?>
+
+                                    </option>
+                                    <?php
+                                }
+                            } else {
+                                ?>
+                                <option value="-1">
+                                    <?= $block->escapeHtml(__('--------- Api key is not valid ---------'))?>
+                                </option>
+                                <?php
+                            }
+                        } else {
+                            ?>
+                            <option value="-1">
+                                <?= $block->escapeHtml(__('--------- Origin or Api Url not set ---------'))?></option>
+                            <?php
+                        }
+                        ?>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field required">
+                <label class="label"><span><?= $block->escapeHtml(__("Domestic Shipping Couriers")); ?>:</span></label>
+                <div class="control">
+                <?php
+                    $data = $block->getAllProDomesticCouriers();
+                    $selectedData = (array)json_decode($block->_getCustomerData()->getMpIndoProDomCouriers());
+                ?>
+                    <select id="mp_indo_pro_dom_couriers"
+                        class="multiselect" multiple size="10" name="mp_indo_pro_dom_couriers[]">
+                        <?php
+                        foreach ($data as $option) {
+                            ?>
+                            <option value="<?= $block->escapeHtml($option['value'])?>"
+                                <?= $block->escapeHtml(
+                                    (in_array($option['value'], $selectedData) == true)
+                                ) ? 'selected' : ''?>><?= $block->escapeHtml($option['label'])?></option>
+                            <?php
+                        }
+                        ?>
+                   </select>
+                </div>
+            </div>
+
+            <div class="field required">
+                <label class="label">
+                    <span>
+                        <?= $block->escapeHtml(__("International Shipping Couriers")); ?>:
+                    </span>
+                </label>
+                <div class="control">
+                <?php
+                    $data = $block->getAllProInternationalCouriers();
+                    $selectedData = (array)json_decode($block->_getCustomerData()->getMpIndoProIntCouriers());
+                ?>
+                    <select id="mp_indo_pro_int_couriers"
+                        class="multiselect" multiple size="10" name="mp_indo_pro_int_couriers[]">
+                        <?php
+                        foreach ($data as $option) {
+                            ?>
+                            <option value="<?= $block->escapeHtml($option['value'])?>"
+                                <?= $block->escapeHtml(
+                                    (in_array($option['value'], $selectedData) == true)
+                                ) ? 'selected' : ''?>><?= $block->escapeHtml($option['label'])?></option>
+                            <?php
+                        }
+                        ?>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!--  End Pro Section -->
+
+    </fieldset>
+</form>
+<?php endif; ?>
+
+<script type="text/x-magento-init">
+{
+    "*":{
+        "indonesianshippingjs": {
+            "starterUrl": "<?= $block->escapeHtml($block->getStarterUrl()) ?>",
+            "basicUrl": "<?= $block->escapeHtml($block->getBasicUrl()) ?>"
+        }
+    }
+}
+</script>

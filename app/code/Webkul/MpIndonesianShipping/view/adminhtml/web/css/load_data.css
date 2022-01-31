@@ -1,0 +1,36 @@
+/**
+ * Webkul Software.
+ *
+ * @category  Webkul
+ * @package   Webkul_MpIndonesianShipping
+ * @author    Webkul
+ * @copyright Copyright (c) Webkul Software Private Limited (https://webkul.com)
+ * @license   https://store.webkul.com/license.html
+ */
+
+.dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+}
+
+.greendot {
+    background-color: green;
+}
+
+.reddot {
+    background-color: red;
+}
+
+.graydot {
+    background-color: gray;
+}
+
+.redtext {
+    color: red;
+}
+
+.greentext {
+    color: green;
+}

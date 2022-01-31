@@ -1,0 +1,39 @@
+<?php
+/**
+ * Webkul Software.
+ *
+ * @category  Webkul
+ * @package   Webkul_MpIndonesianShipping
+ * @author    Webkul
+ * @copyright Copyright (c) Webkul Software Private Limited (https://webkul.com)
+ * @license   https://store.webkul.com/license.html
+ */
+?>
+<?php
+    $navigationBlock = $block->getLayout()->createBlock(\Webkul\MpIndonesianShipping\Block\Account\Navigation::class);
+    $_helper = $navigationBlock->getMarketplaceDataHelper();
+    $isPartner = $_helper->isSeller();
+    $isSellerGroup = $_helper->isSellerGroupModuleInstalled();
+    $magentoCurrentUrl = $block->getCurrentUrl();
+    $helper = $navigationBlock->getHelper();
+    $isSecure = $navigationBlock->isSecure();
+?>
+<?php if ($isPartner):?>
+    <?php
+    $pos = strpos($magentoCurrentUrl, 'mpindonesian/shipping/view');
+    $url = $block->getUrl('mpindonesian/shipping/view', ['_secure' => $isSecure]);
+    ?>
+    <?php if (($helper->config('active') &&
+        $helper->isAllowedSellerToSaveDetails() &&
+        $isSellerGroup &&
+        $_helper->isAllowedAction('mpindonesian/shipping/view')
+        ) ||
+        (!$isSellerGroup && $helper->config('active') && $helper->config('allow_seller'))):?>
+        <li id="wk-mp-menu-indonesian-shipping"
+        class="level-2 <?= $block->escapeHtml($pos) ? "current active" : "";?>">
+            <a href="<?= $block->escapeHtml($url); ?>">
+                <?= $block->escapeHtml(__('Indonesian Shipping')) ?>
+            </a>
+        </li>
+    <?php endif; ?>
+<?php endif; ?>

@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Webkul Software.
+ *
+ * @category  Webkul
+ * @package   Webkul_MpIndonesianShipping
+ * @author    Webkul
+ * @copyright Copyright (c) Webkul Software Private Limited (https://webkul.com)
+ * @license   https://store.webkul.com/license.html
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="carriers">
+            <group id="mpindonesianshipping" translate="label" type="text" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Webkul Marketplace Indonesian Shipping</label>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled for Checkout</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="api_url" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Api URL</label>
+                    <source_model>Webkul\MpIndonesianShipping\Model\System\Config\Source\ApiUrl</source_model>
+                </field>
+                <field id="api_key" translate="label" type="obscure" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Api Key</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                </field>
+                <field id="load_data" translate="label" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Load Data</label>
+                    <frontend_model>Webkul\MpIndonesianShipping\Block\System\Config\Form\LoadData</frontend_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="method_name" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Method Name</label>
+                </field>
+                <field id="origin_type" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Origin Type</label>
+                    <depends>
+                        <field id="api_url">https://pro.rajaongkir.com/api</field>
+                    </depends>
+                    <source_model>Webkul\MpIndonesianShipping\Model\System\Config\Source\OriginType</source_model>
+                </field>
+                <field id="sub_district_origin" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Sub District Origin</label>
+                    <depends>
+                        <field id="origin_type">1</field>
+                        <field id="api_url">https://pro.rajaongkir.com/api</field>
+                    </depends>
+                    <source_model>Webkul\MpIndonesianShipping\Model\System\Config\Source\SubDistricts</source_model>
+                </field>
+                <field id="starter_domestic_shipping_couriers" translate="label" type="multiselect" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Domestic Shipping Couriers</label>
+                    <depends>
+                        <field id="api_url">https://api.rajaongkir.com/starter</field>
+                    </depends>
+                    <source_model>Webkul\MpIndonesianShipping\Model\System\Config\Source\StarterDomesticShippingCouriers</source_model>
+                </field>
+                <field id="basic_domestic_shipping_couriers" translate="label" type="multiselect" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Domestic Shipping Couriers</label>
+                    <depends>
+                        <field id="api_url">https://api.rajaongkir.com/basic</field>
+                    </depends>
+                    <source_model>Webkul\MpIndonesianShipping\Model\System\Config\Source\BasicDomesticShippingCouriers</source_model>
+                </field>
+                <field id="basic_international_shipping_couriers" translate="label" type="multiselect" sortOrder="75" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>International Shipping Couriers</label>
+                    <depends>
+                        <field id="api_url">https://api.rajaongkir.com/basic</field>
+                    </depends>
+                    <source_model>Webkul\MpIndonesianShipping\Model\System\Config\Source\BasicInternationalShippingCouriers</source_model>
+                </field>
+                <field id="pro_domestic_shipping_couriers" translate="label" type="multiselect" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Domestic Shipping Couriers</label>
+                    <depends>
+                        <field id="api_url">https://pro.rajaongkir.com/api</field>
+                    </depends>
+                    <source_model>Webkul\MpIndonesianShipping\Model\System\Config\Source\ProDomesticShippingCouriers</source_model>
+                </field>
+                <field id="pro_international_shipping_couriers" translate="label" type="multiselect" sortOrder="75" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>International Shipping Couriers</label>
+                    <depends>
+                        <field id="api_url">https://pro.rajaongkir.com/api</field>
+                    </depends>
+                    <source_model>Webkul\MpIndonesianShipping\Model\System\Config\Source\ProInternationalShippingCouriers</source_model>
+                </field>
+                <field id="add_sub_price" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Add or Substract Shipping Price by</label>
+                    <comment>example: +5% , +5000 , -5% , -5000 , leave it empty if not necessary, plus(+) or minus (-) sign is MANDATORY to use this feature</comment>
+                </field>
+                <field id="allow_seller" translate="label" type="select" sortOrder="95" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Allow Sellers to Save MpIndonesianShipping Details</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="showmethod" translate="label" type="select" sortOrder="97" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Show Method if Not Applicable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="err_msg" translate="label" type="textarea" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Displayed Error Message</label>
+                </field>
+                <field id="debug" translate="label" type="select" sortOrder="105" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Debug</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

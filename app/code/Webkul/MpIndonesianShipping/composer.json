@@ -1,0 +1,20 @@
+{
+    "name": "webkul/marketplace-base-indonesian-shipping",
+    "description": "Webkul Marketplace Base Indonesian Shipping",
+    "type": "magento2-module",
+    "version": "5.0.0",
+    "require": {
+        "webkul/module-marketplace": "5.0.*"
+    },
+    "license": [
+        "proprietary"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Webkul\\MpIndonesianShipping\\": ""
+        }
+    }
+}

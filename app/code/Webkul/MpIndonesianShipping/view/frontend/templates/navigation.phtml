@@ -1,0 +1,36 @@
+<?php
+/**
+ * Webkul Software.
+ *
+ * @category  Webkul
+ * @package   Webkul_MpIndonesianShipping
+ * @author    Webkul
+ * @copyright Copyright (c) Webkul Software Private Limited (https://webkul.com)
+ * @license   https://store.webkul.com/license.html
+ */
+?>
+<?php
+$navigationBlock = $block->getLayout()->createBlock(\Webkul\MpIndonesianShipping\Block\Account\Navigation::class);
+$_helper = $navigationBlock->getMarketplaceDataHelper();
+$helper = $navigationBlock->getHelper();
+$isPartner = $_helper->isSeller();
+$magentoCurrentUrl = $block->getCurrentUrl();
+?>
+<?php
+if ($isPartner && $helper->config('active') && $helper->config('allow_seller')) { ?>
+        <?php
+        $pos = strpos($magentoCurrentUrl, 'mpindonesian/shipping/view');
+        ?>
+        <li class="nav item <?= $block->escapeHtml($pos !== false) ? "current" : "";?>">
+       <?php
+        if (strpos($magentoCurrentUrl, 'mpindonesian/shipping/view') !== false) { ?>
+            <strong><?= $block->escapeHtml(__('Indonesian Configuration')) ?></strong>
+            <?php
+        } else { ?>
+            <a href="<?= $block->escapeHtml($block->getUrl('mpindonesian/shipping/view')); ?>">
+                <?= $block->escapeHtml(__('Indonesian Configuration')) ?>
+            </a>
+            <?php
+        } ?>
+        </li>
+<?php }?>

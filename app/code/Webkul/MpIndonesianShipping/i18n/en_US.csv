@@ -1,0 +1,87 @@
+"api url is not set properly","api url is not set properly"
+"api key is not set properly","api key is not set properly"
+"Data saved properly","Data saved properly"
+"Indonesian Shipping details saved successfully.","Indonesian Shipping details saved successfully."
+"Manage Indonesian Configuration","Manage Indonesian Configuration"
+"Could not save the city: %1","Could not save the city: %1"
+"City with id ""%1"" does not exist.","City with id ""%1"" does not exist."
+"Could not delete the City: %1","Could not delete the City: %1"
+"Could not save the country: %1","Could not save the country: %1"
+"Country with id ""%1"" does not exist.","Country with id ""%1"" does not exist."
+"Could not delete the Country: %1","Could not delete the Country: %1"
+"Starter (https://api.rajaongkir.com/starter)","Starter (https://api.rajaongkir.com/starter)"
+"Basic (https://api.rajaongkir.com/basic)","Basic (https://api.rajaongkir.com/basic)"
+"Pro (https://pro.rajaongkir.com/api)","Pro (https://pro.rajaongkir.com/api)"
+JNE,JNE
+POS,POS
+TIKI,TIKI
+PCP,PCP
+ESL,ESL
+RPX,RPX
+"--- Select Origin (' . . ' Cities Registered) ---","--- Select Origin (' . . ' Cities Registered) ---"
+"API KEY INVALID","API KEY INVALID"
+City,City
+"Sub District","Sub District"
+District,District
+PANDU,PANDU
+WAHANA,WAHANA
+"J & T","J & T"
+PAHALA,PAHALA
+CAHAYA,CAHAYA
+SAP,SAP
+JET,JET
+INDAH,INDAH
+DSE,DSE
+SLIS,SLIS
+FIRST,FIRST
+NCS,NCS
+STAR,STAR
+EXPEDITO,EXPEDITO
+"ORIGIN FAILED","ORIGIN FAILED"
+"--- Select Origin (' . . ' Sub District Registered) ---","--- Select Origin (' . . ' Sub District Registered) ---"
+"Api Key Invalid","Api Key Invalid"
+"Indonesian Api Url","Indonesian Api Url"
+"Indonesian Api Key","Indonesian Api Key"
+"Indonesian Origin Type","Indonesian Origin Type"
+"Indonesian Origin Id","Indonesian Origin Id"
+"Indonesian Starter Domestic Couriers","Indonesian Starter Domestic Couriers"
+"Indonesian Basic Domestic Couriers","Indonesian Basic Domestic Couriers"
+"Indonesian Basic International Couriers","Indonesian Basic International Couriers"
+"Indonesian Pro Domestic Couriers","Indonesian Pro Domestic Couriers"
+"Indonesian Pro International Couriers","Indonesian Pro International Couriers"
+"Api key not found","Api key not found"
+"Load/Update Data","Load/Update Data"
+Indicator,Indicator
+"This will use only for the first time.","This will use only for the first time."
+"(It might take upto two minutes)","(It might take upto two minutes)"
+"Indonesian Shipping","Indonesian Shipping"
+"Indonesian Configuration","Indonesian Configuration"
+"* Required Fields","* Required Fields"
+"Marketplace Indonesian Configuration","Marketplace Indonesian Configuration"
+Save,Save
+"Api Url","Api Url"
+"Starter (' . . ')","Starter (' . . ')"
+"Basic (' . . ')","Basic (' . . ')"
+"Pro (' . . ')","Pro (' . . ')"
+"Api Key","Api Key"
+"Domestic Shipping Couriers","Domestic Shipping Couriers"
+"International Shipping Couriers","International Shipping Couriers"
+"Origin Type","Origin Type"
+"Sub Districts","Sub Districts"
+"--------- Select Sub District ---------","--------- Select Sub District ---------"
+"--------- Api key is not valid ---------","--------- Api key is not valid ---------"
+"--------- Origin or Api Url not set ---------","--------- Origin or Api Url not set ---------"
+"Are you sure want to load/update data ? It might take upto two minutes.","Are you sure want to load/update data ? It might take upto two minutes."
+"Error Occurred !","Error Occurred !"
+"Webkul Marketplace Indonesian Shipping","Webkul Marketplace Indonesian Shipping"
+"Enabled for Checkout","Enabled for Checkout"
+"Api URL","Api URL"
+"Load Data","Load Data"
+Title,Title
+"Method Name","Method Name"
+"Sub District Origin","Sub District Origin"
+"Add or Substract Shipping Price by","Add or Substract Shipping Price by"
+"Allow Sellers to Save MpIndonesianShipping Details","Allow Sellers to Save MpIndonesianShipping Details"
+"Show Method if Not Applicable","Show Method if Not Applicable"
+"Displayed Error Message","Displayed Error Message"
+Debug,Debug

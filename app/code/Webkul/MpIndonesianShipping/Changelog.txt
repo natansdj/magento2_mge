@@ -1,0 +1,25 @@
+Legend
+
++ Features
+
+-------------------------------- Version 5.0.0 --------------------------------------
++ Compatible with Magento 2.4.x
+
+-------------------------------- Version 4.0.0 --------------------------------------
++ Compatible with Magento 2.4.x Enterprise Edition and Marketplace 4.0.x.
+
+-------------------------------- Version 3.0.0 --------------------------------------
++ Compatible with Magento 2.3.x
+
+-------------------------------- Version 2.2.0 --------------------------------------
++ Version upgrade for Magento 2.2.x
+
+-------------------------------- Version 2.0.0 --------------------------------------
++ Admin can enable or disable Marketplace Indonesian Shipping method.
++ Admin can set the Marketplace Indonesian shipping title name that will be shown from front side.
++ Admin can allow sellers to save his/her Indonesian Credentials.
++ Admin can increase or decrease shipping charges by some value.
++ Seller can choose Starter/Basic/Pro api version.
++ Seller can set Sub District his/her as origin.
++ Indonesian shipping rate will be calculated from seller's address.
++ Seller can track the shipment.

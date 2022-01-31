@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * Webkul Software.
+ *
+ * @category  Webkul
+ * @package   Webkul_MpIndonesianShipping
+ * @author    Webkul
+ * @copyright Copyright (c) Webkul Software Private Limited (https://webkul.com)
+ * @license   https://store.webkul.com/license.html
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+      	<carriers>
+        		<mpindonesianshipping>
+          			<model>Webkul\MpIndonesianShipping\Model\Carrier</model>
+          			<active>0</active>
+                <title>Webkul Mp Indonesian shipping</title>
+          			<method_name>Local Delivery</method_name>
+                <origin_type>0</origin_type>
+                <sub_district_origin>-1</sub_district_origin>
+                <allow_seller>0</allow_seller>
+                <showmethod>0</showmethod>
+                <err_msg>This shipping method is currently unavailable. If you would like to ship using this shipping method, please contact us.</err_msg>
+                <debug>0</debug>
+          	</mpindonesianshipping>
+      	</carriers>
+    </default>
+</config>

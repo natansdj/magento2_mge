@@ -1,0 +1,52 @@
+<?php
+/**
+ * Webkul Software
+ *
+ * @category  Webkul
+ * @package   Webkul_MpIndonesianShipping
+ * @author    Webkul
+ * @copyright Copyright (c) Webkul Software Private Limited (https://webkul.com)
+ * @license   https://store.webkul.com/license.html
+ */
+
+?>
+<?php
+if ((!$block->hasApiUrl()) || (!$block->hasApikey())) {
+    ?>
+        <input type="button"
+        id="load_data_btn" disabled
+        title="<?= $block->escapeHtml(__('Api key not found'))?>"
+        value="<?= $block->escapeHtml(__('Load/Update Data'))?>">
+        <?php
+} else {
+    ?>
+        <input type="button" id="load_data_btn" value="<?= $block->escapeHtml(__('Load/Update Data'))?>">
+        <?php
+}
+?>
+<span id="load_data_dot" class="dot graydot" title="<?= $block->escapeHtml(__('Indicator'))?>"></span>
+<span id="load_data_msg"></span>
+
+<div id="load_comment">
+    <small>
+        <?= $block->escapeHtml(__('This will use only for the first time.'))?>
+        <br>
+        <?= $block->escapeHtml(__('(It might take upto two minutes)'))?>
+    </small>
+</div>
+
+<?php
+    $ajaxUrl = $block->getUrl('mpindonesian/shipping/loaddata', ['form_key' => $block->getFormKey()]);
+    $ajaxCheckUrl = $block->getUrl('mpindonesian/shipping/checkdata', ['form_key' => $block->getFormKey()]);
+?>
+
+<script type="text/x-magento-init">
+{
+    "*":{
+        "loaddatajs": {
+            "ajaxUrl" : "<?= $block->escapeHtml($ajaxUrl)?>",
+            "ajaxCheckUrl" : "<?= $block->escapeHtml($ajaxCheckUrl)?>"
+        }
+    }
+}
+</script>
