@@ -68,7 +68,7 @@ https://www.magetop.com/blog/install-magento-2-4-2-on-ubuntu/
 - php -d memory_limit=-1 bin/magento cache:flush
 - regenerate static files, if site is broken
   - php -d memory_limit=-1 bin/magento setup:di:compile
-  - php -d memory_limit=-1 bin/magento setup:static-content:deploy -f
+  - php -d memory_limit=-1 bin/magento setup:static-content:deploy id_ID -f
   - check /pub/static/.htaccess file is exists and has correct permission (664)
 - If versioning static files broken disable static versioning
   - adding 'dev/static/sign' as 0 on the core_config_data table
