@@ -8,12 +8,21 @@
     ],
     "config": {
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": false,
+            "magento/magento-composer-installer": false,
+            "magento/inventory-composer-installer": false,
+            "laminas/laminas-dependency-plugin": false,
+            "magento/composer-root-update-plugin": false
+        }
     },
     "version": "2.4.2-p2",
     "require": {
-        "magento/product-community-edition": "2.4.2-p2",
-        "magento/composer-root-update-plugin": "~1.1"
+        "dragdropr/magento2": "^1.1",
+        "facebook/php-business-sdk": "^12.0",
+        "magento/composer-root-update-plugin": "~1.1",
+        "magento/product-community-edition": "2.4.2-p2"
     },
     "autoload": {
         "exclude-from-classmap": [
@@ -77,4 +86,3 @@
         "magento-force": "override"
     }
 }
-

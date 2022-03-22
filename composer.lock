@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "45f1b126ac3ca3a03b37b2f0f8b29307",
+    "content-hash": "3d01c9df49a9157e605357e63fd16e16",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -1373,6 +1373,41 @@
             "description": "Engagement Cloud for Magento 2: SMS module"
         },
         {
+            "name": "dragdropr/magento2",
+            "version": "1.1.14",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/dragdropr/magento2/dragdropr-magento2-1.1.14.0.zip",
+                "shasum": "f621df85ce746305ec6e24dbca15a5219d8fb8d4"
+            },
+            "require": {
+                "magento/module-integration": ">=100.0.2",
+                "magento/module-ui": ">=100.0.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.1.0|~6.2.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "DragDropr\\Magento2\\": ""
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Ricards Zalitis",
+                    "email": "ricards.z@nnpro.at"
+                }
+            ],
+            "description": "DragDropr Magento 2 integration module"
+        },
+        {
             "name": "elasticsearch/elasticsearch",
             "version": "v7.7.0",
             "source": {
@@ -1606,6 +1641,50 @@
             ],
             "description": "Fork of guzzle/RingPHP (abandoned) to be used with elasticsearch-php",
             "time": "2020-02-14T23:51:21+00:00"
+        },
+        {
+            "name": "facebook/php-business-sdk",
+            "version": "12.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/facebook/facebook-php-business-sdk.git",
+                "reference": "8a5116a7b9dda010e41438380c18eb2576719ef9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/facebook/facebook-php-business-sdk/zipball/8a5116a7b9dda010e41438380c18eb2576719ef9",
+                "reference": "8a5116a7b9dda010e41438380c18eb2576719ef9",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.5 || ^7.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "1.3.3",
+                "phpunit/phpunit": "~8",
+                "symfony/finder": "~2.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FacebookAds\\": "src/FacebookAds/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "PHP SDK for Facebook Business",
+            "homepage": "https://developers.facebook.com/",
+            "keywords": [
+                "ads",
+                "business",
+                "facebook",
+                "instagram",
+                "page",
+                "sdk"
+            ],
+            "support": {
+                "source": "https://github.com/facebook/facebook-php-business-sdk/tree/12.0.1"
+            },
+            "time": "2021-10-25T22:58:14+00:00"
         },
         {
             "name": "google/recaptcha",
@@ -25463,5 +25542,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.2.0"
 }

